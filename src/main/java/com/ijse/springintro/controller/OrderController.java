@@ -80,4 +80,10 @@ public class OrderController {
         Order order = orderService.removeProductFromOrder(orderId, productId);
         return ResponseEntity.status(200).body(order);
     }
+
+    @DeleteMapping("orders/{id}")
+    public void deleteOrder(@PathVariable Long id) {
+        orderService.deleteOrder(id);
+    }
+ 
 }
